@@ -3,6 +3,7 @@ package com.josephyubileo.pbp_uas_kel_a;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -20,6 +21,8 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         DrawerLayout drawer = findViewById(R.id.sidebar_drawer);
         NavigationView navigationView = findViewById(R.id.nav_view);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         mAC = new AppBarConfiguration.Builder(
                 R.id.nav_profile)
                 .setDrawerLayout(drawer)

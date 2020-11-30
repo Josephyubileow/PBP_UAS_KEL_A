@@ -1,11 +1,14 @@
 package com.josephyubileo.pbp_uas_kel_a;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,6 +61,10 @@ public class SignOutFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sign_out, container, false);
+        View root = inflater.inflate(R.layout.fragment_sign_out, container, false);
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(getActivity(),LoginActivity.class);
+        startActivity(intent);
+        return root;
     }
 }

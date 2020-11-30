@@ -15,12 +15,14 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
     FirebaseAuth auth;
     EditText etEmail, etPassword;
     Button login;
     TextView gotoRegister;
+    FirebaseUser newUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         login = findViewById(R.id.btnLogin);
         gotoRegister = findViewById(R.id.btnGotoRegister);
         auth = FirebaseAuth.getInstance();
+        newUser = auth.getCurrentUser();
 
         login.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -48,11 +51,16 @@ public class LoginActivity extends AppCompatActivity {
                 auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(com.josephyubileo.pbp_uas_kel_a.LoginActivity.this, "Logged in Successfully!", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-                        }else{
-                            Toast.makeText(com.josephyubileo.pbp_uas_kel_a.LoginActivity.this, "Login Error!" +task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        if(newUser.isEmailVerified()){
+                            if(task.isSuccessful()){
+                                Toast.makeText(com.josephyubileo.pbp_uas_kel_a.LoginActivity.this, "Logged in Successfully!", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                            }else{
+                                Toast.makeText(com.josephyubileo.pbp_uas_kel_a.LoginActivity.this, "Login Error!" +task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        else{
+                            Toast.makeText(com.josephyubileo.pbp_uas_kel_a.LoginActivity.this, "email has not been verified!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
