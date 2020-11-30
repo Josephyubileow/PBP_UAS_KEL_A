@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@+id/nav_dashboard">
+
+    <fragment
+        android:id="@+id/nav_dashboard"
+        android:name="com.josephyubileo.pbp_uas_kel_a.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_nav_dashboard_to_nav_location"
+            app:destination="@id/nav_location" />
+        <action
+            android:id="@+id/action_nav_dashboard_to_nav_company"
+            app:destination="@id/nav_company" />
+        <action
+            android:id="@+id/action_nav_dashboard_to_nav_motorcycle"
+            app:destination="@id/nav_motorcycle" />
+        <action
+            android:id="@+id/action_nav_dashboard_to_nav_transaction"
+            app:destination="@id/nav_transaction" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_location"
+        android:name="com.josephyubileo.pbp_uas_kel_a.LocationFragment"
+        android:label="Location"
+        tools:layout="@layout/fragment_location" >
+    </fragment>
+    <fragment
+        android:id="@+id/nav_company"
+        android:name="com.josephyubileo.pbp_uas_kel_a.CompanyFragment"
+        android:label="Company"
+        tools:layout="@layout/fragment_company" >
+    </fragment>
+    <fragment
+        android:id="@+id/nav_transaction"
+        android:name="com.josephyubileo.pbp_uas_kel_a.Customer.CustomerModelFragment"
+        android:label="Transaction"
+        tools:layout="@layout/fragment_location" >
+        <action
+            android:id="@+id/action_nav_customer_to_nav_add_customer"
+            app:destination="@id/nav_add_customer" />
+        <action
+            android:id="@+id/action_nav_customer_to_nav_update_customer"
+            app:destination="@id/nav_update_customer" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_motorcycle"
+        android:name="com.josephyubileo.pbp_uas_kel_a.Motorcycle.HomeMotorcycleFragment"
+        android:label="Motorcycle"
+        tools:layout="@layout/fragment_home_motorcycle" >
+        <action
+            android:id="@+id/action_nav_motorcycle_to_nav_add_motorcycle"
+            app:destination="@id/nav_add_motorcycle" />
+        <action
+            android:id="@+id/action_nav_motorcycle_to_nav_update_motorcycle"
+            app:destination="@id/nav_update_motorcycle" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_add_motorcycle"
+        android:name="com.josephyubileo.pbp_uas_kel_a.Motorcycle.AddMotorcycleFragment"
+        android:label="Add Motorcycle"
+        tools:layout="@layout/fragment_add_motorcycle" >
+    </fragment>
+    <fragment
+        android:id="@+id/nav_update_motorcycle"
+        android:name="com.josephyubileo.pbp_uas_kel_a.Motorcycle.UpdateMotorcycleFragment"
+        android:label="Update Motorcycle"
+        tools:layout="@layout/fragment_update_motorcycle" >
+    </fragment>
+    <fragment
+        android:id="@+id/nav_add_customer"
+        android:name="com.josephyubileo.pbp_uas_kel_a.Customer.AddCustomerFragment"
+        android:label="Add Customer"
+        tools:layout="@layout/fragment_add_customer" >
+    </fragment>
+    <fragment
+        android:id="@+id/nav_update_customer"
+        android:name="com.josephyubileo.pbp_uas_kel_a.Customer.UpdateCustomerFragment"
+        android:label="Update Customer"
+        tools:layout="@layout/fragment_update_customer" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.josephyubileo.pbp_uas_kel_a.EditProfileFragment"
+        android:label="Edit Profile"
+        tools:layout="@layout/fragment_edit_profile">
+    </fragment>
+    <fragment
+        android:id="@+id/nav_sign_out"
+        android:name="com.josephyubileo.pbp_uas_kel_a.SignOutFragment"
+        android:label="Sign Out"
+        tools:layout="@layout/fragment_sign_out">
+    </fragment>
+
+</navigation>

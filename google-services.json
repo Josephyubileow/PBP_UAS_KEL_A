@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "896718007332",
+    "firebase_url": "https://pbpuasekela.firebaseio.com",
+    "project_id": "pbpuasekela",
+    "storage_bucket": "pbpuasekela.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896718007332:android:af5f0fdaecc2221631bcb1",
+        "android_client_info": {
+          "package_name": "com.josephyubileo.pbp_uas_kel_a"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "896718007332-t3a7f34oenoml3es3hpq40nohhb7hp17.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzJbAUE4UV4Zszbl8lErjkolzlKNdpmEg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "896718007332-t3a7f34oenoml3es3hpq40nohhb7hp17.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
